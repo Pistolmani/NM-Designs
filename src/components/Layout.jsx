@@ -1,12 +1,15 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import CursorGlow from './CursorGlow';
 
 const Layout = ({ children }) => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <div className="site-shell">
+      <CursorGlow />
+      <div className="site-atmosphere" aria-hidden="true" />
       <Navbar />
-      <main style={{ flex: 1, paddingBottom: '4rem' }}>
+      <main className="site-main">
         {children}
       </main>
       <Footer />

@@ -7,57 +7,56 @@ import './Studio.css';
 const Studio = () => {
   const { t } = useTranslation();
 
-  // Scroll to top on mount
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const serviceCategories = [
     {
-      title: 'Structural Planning & Technical Design',
+      title: t('studio.cat.1.title'),
       items: [
-        'Full interior design & concept development',
-        'Comprehensive space planning',
-        'Technical drawings & design documentation',
-        'Lighting & electrical layout planning'
+        t('studio.cat.1.item.1'),
+        t('studio.cat.1.item.2'),
+        t('studio.cat.1.item.3'),
+        t('studio.cat.1.item.4')
       ]
     },
     {
-      title: 'Curation & Custom Fabrication',
+      title: t('studio.cat.2.title'),
       items: [
-        'Material & finish selection',
-        'Furniture planning & sourcing',
-        'Custom furniture design & detailing'
+        t('studio.cat.2.item.1'),
+        t('studio.cat.2.item.2'),
+        t('studio.cat.2.item.3')
       ]
     },
     {
-      title: 'Visualization & Creative Direction',
+      title: t('studio.cat.3.title'),
       items: [
-        'Moodboards & aesthetic direction',
-        'High-fidelity 3D visualizations & renders'
+        t('studio.cat.3.item.1'),
+        t('studio.cat.3.item.2')
       ]
     }
   ];
 
   const processSteps = [
-    { num: '01', title: 'Consultation & Briefing', desc: 'We begin by deeply analyzing the architectural constraints of your space and your functional requirements.' },
-    { num: '02', title: 'Concept & Visualization', desc: 'Developing the visual language through rigorous material selection and precise 3D rendering to ensure absolute alignment.' },
-    { num: '03', title: 'Technical Documentation', desc: 'Translating the concept into comprehensive technical drawings, electrical plans, and custom joinery detailing for contractors.' }
+    { num: '01', title: t('studio.step.1.title'), desc: t('studio.step.1.desc') },
+    { num: '02', title: t('studio.step.2.title'), desc: t('studio.step.2.desc') },
+    { num: '03', title: t('studio.step.3.title'), desc: t('studio.step.3.desc') }
   ];
 
   return (
-    <PageTransition title="The Studio" description="Interior Design and Architecture Studio led by Nini in Tbilisi.">
+    <PageTransition title={t('studio.title')} description={t('studio.philosophy.lead')}>
     <div className="studio-page">
-      {/* 1. Philosophy Hero */}
+      {/* 1. Philosophy Hero — centered title, then two-column text */}
       <section className="container section studio-hero">
-        <h1 className="heading-large" style={{ marginBottom: '2rem' }}>The Studio</h1>
+        <h1 className="heading-large studio-page-title studio-wordmark">{t('studio.title')}</h1>
         <div className="philosophy-grid">
           <p className="text-body lead-text">
-            NM Designs approaches interiors with technical rigor and an editing eye. We believe warm minimalism isn't just a visual aesthetic—it is the discipline of removing the unnecessary to reveal calm, purpose, and elegance in everyday living.
+            {t('studio.philosophy.lead')}
           </p>
           <div className="philosophy-secondary">
-             <p className="text-body" style={{ opacity: 0.7 }}>
-               Led by Nini in Tbilisi, we specialize in residential sanctuaries. Our process bridges the gap between conceptual beauty and absolute technical precision, ensuring that the spaces we design can actually be built flawlessly.
+             <p className="text-body philosophy-secondary-text">
+               {t('studio.philosophy.secondary')}
              </p>
           </div>
         </div>
@@ -66,7 +65,7 @@ const Studio = () => {
       {/* 2. Grouped Services */}
       <section className="container section services-section">
         <div className="services-header">
-           <h2 className="heading-medium">Area of Expertise</h2>
+           <h2 className="heading-medium">{t('studio.expertise.title')}</h2>
         </div>
         <div className="services-grid">
           {serviceCategories.map((cat, idx) => (
@@ -84,7 +83,7 @@ const Studio = () => {
 
       {/* 3. The Process */}
       <section className="container section process-section">
-        <h2 className="heading-medium" style={{ marginBottom: '4rem' }}>Our Process</h2>
+        <h2 className="heading-medium process-section-heading">{t('studio.process.title')}</h2>
         <div className="process-timeline">
            {processSteps.map((step) => (
              <div className="timeline-step" key={step.num}>
@@ -98,38 +97,38 @@ const Studio = () => {
         </div>
       </section>
 
-      {/* 4. Expectations (Replacing standard FAQ) */}
+      {/* 4. Expectations */}
       <section className="container section expectations-section">
         <div className="expectations-grid">
           <div className="expectations-header">
-             <h2 className="heading-medium">Client Expectations</h2>
+             <h2 className="heading-medium">{t('studio.expectations.title')}</h2>
           </div>
           <div className="expectations-content text-body">
-             <p style={{ marginBottom: '2rem' }}>
-               <strong style={{ display: 'block', marginBottom: '0.5rem', fontFamily: 'var(--font-serif)', fontSize: '1.25rem' }}>Comprehensive Scope</strong>
-               We do not offer piecemeal consulting or hourly decorating. We prefer to take on full-room or full-home projects to guarantee the integrity of the final design.
-             </p>
-             <p style={{ marginBottom: '2rem' }}>
-               <strong style={{ display: 'block', marginBottom: '0.5rem', fontFamily: 'var(--font-serif)', fontSize: '1.25rem' }}>Visual Reliance</strong>
-               We rely heavily on precise 3D visualizations before breaking ground. This ensures total clarity between our vision and yours, preventing costly changes during construction.
-             </p>
-             <p>
-               <strong style={{ display: 'block', marginBottom: '0.5rem', fontFamily: 'var(--font-serif)', fontSize: '1.25rem' }}>Mutual Trust</strong>
-               Premium design requires time and decisiveness. We work best with clients who value our expertise and give us the creative freedom to deliver our best work.
-             </p>
+             <div className="expectation-item">
+               <strong className="expectation-title">{t('studio.exp.scope.title')}</strong>
+               <p>{t('studio.exp.scope.text')}</p>
+             </div>
+             <div className="expectation-item">
+               <strong className="expectation-title">{t('studio.exp.visual.title')}</strong>
+               <p>{t('studio.exp.visual.text')}</p>
+             </div>
+             <div className="expectation-item">
+               <strong className="expectation-title">{t('studio.exp.trust.title')}</strong>
+               <p>{t('studio.exp.trust.text')}</p>
+             </div>
           </div>
         </div>
       </section>
 
       {/* 5. CTA */}
-      <section className="section container contact-cta" style={{ borderTop: '1px solid var(--border-color)', marginTop: 'var(--space-xl)' }}>
+      <section className="section container contact-cta">
         <div className="cta-box">
-          <h2 className="heading-large">Ready to transform your space?</h2>
-          <p className="text-body" style={{ margin: '1.5rem auto 3rem auto', maxWidth: '500px', opacity: 0.8 }}>
-            Tell us about your project, timeline, and vision to see if we are a good fit.
+          <h2 className="heading-large">{t('studio.cta.title')}</h2>
+          <p className="text-body cta-text">
+            {t('studio.cta.text')}
           </p>
-          <Link to="/contact" className="btn-primary" style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)', border: 'none' }}>
-            Inquire Now
+          <Link to="/contact" className="btn-primary">
+            {t('studio.cta.button')}
           </Link>
         </div>
       </section>

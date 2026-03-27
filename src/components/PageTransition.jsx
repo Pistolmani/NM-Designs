@@ -1,6 +1,31 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 
+const pageVariants = {
+  initial: {
+    opacity: 0,
+    y: 10,
+  },
+  enter: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.9,
+      ease: [0.22, 1, 0.36, 1], /* smooth step out */
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: 6,
+    transition: {
+      duration: 0.55,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+const MotionDiv = motion.div;
+
 const PageTransition = ({ children, title, description }) => {
   useEffect(() => {
     if (title) document.title = `${title} | NM Designs`;
@@ -16,14 +41,14 @@ const PageTransition = ({ children, title, description }) => {
   }, [title, description]);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 15 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+    <MotionDiv
+      initial="initial"
+      animate="enter"
+      exit="exit"
+      variants={pageVariants}
     >
       {children}
-    </motion.div>
+    </MotionDiv>
   );
 };
 

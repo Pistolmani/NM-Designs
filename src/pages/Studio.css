@@ -1,37 +1,66 @@
 .studio-page {
-  padding-top: 5vh;
+  padding-top: 6vh;
 }
 
-/* Philosophy Hero */
+.studio-page-title {
+  margin-bottom: 3.5rem;
+  max-width: 620px;
+  padding-left: clamp(4rem, 16vw, 15rem);
+}
+
 .philosophy-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
-  margin-top: 4rem;
+  padding-left: clamp(4rem, 16vw, 15rem);
 }
 
 @media (min-width: 900px) {
   .philosophy-grid {
-    grid-template-columns: 1.5fr 1fr;
-    gap: 6rem;
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.92fr);
+    gap: clamp(4.5rem, 8vw, 9rem);
     align-items: start;
   }
 }
 
+@media (max-width: 900px) {
+  .studio-page-title,
+  .philosophy-grid {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .studio-page-title {
+    text-align: center;
+  }
+
+  .philosophy-grid {
+    text-align: center;
+  }
+
+  .philosophy-secondary {
+    max-width: 34rem;
+    margin: 0 auto;
+  }
+}
+
 .lead-text {
-  font-size: clamp(1.2rem, 3vw, 1.75rem);
-  line-height: 1.5;
+  font-size: clamp(1.24rem, 3vw, 1.82rem);
+  line-height: 1.62;
   color: var(--text-primary);
-  opacity: 1;
   max-width: 100%;
 }
 
 .philosophy-secondary {
-  border-top: 1px solid var(--border-color);
-  padding-top: 2rem;
+  border-top: 1px solid rgba(157, 95, 70, 0.2);
+  padding-top: 2.5rem;
 }
 
-/* Services */
+.philosophy-secondary-text {
+  color: rgba(55, 44, 37, 0.7);
+}
+
 .services-section {
   border-top: 1px solid var(--border-color);
 }
@@ -55,30 +84,34 @@
 
 .category-title {
   display: block;
-  font-family: var(--font-sans);
-  font-size: 0.85rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.12em;
   margin-bottom: 2rem;
   border-bottom: 1px solid var(--border-color);
-  padding-bottom: 1rem;
-  opacity: 0.7;
+  padding-bottom: 1.25rem;
+  color: rgba(55, 44, 37, 0.66);
 }
 
 .category-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.55rem;
 }
 
 .category-list li {
-  opacity: 0.8;
-  font-size: 1.05rem;
-  line-height: 1.4;
+  color: rgba(55, 44, 37, 0.8);
+  font-size: 1.02rem;
+  line-height: 1.68;
 }
 
-/* Process Timeline (Vertical) */
+.process-section-heading {
+  margin-bottom: 4rem;
+}
+
 .process-timeline {
   display: flex;
   flex-direction: column;
@@ -88,55 +121,71 @@
 .timeline-step {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
-  padding: 3rem 0;
+  gap: 1.25rem;
+  padding: 3.5rem 0;
   border-top: 1px solid var(--border-color);
 }
 
 @media (min-width: 768px) {
   .timeline-step {
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 110px 1fr;
     gap: 4rem;
   }
 }
 
 .step-num {
-  font-family: var(--font-serif);
-  font-size: 2.5rem;
-  color: var(--accent-color);
+  font-family: var(--font-display);
+  font-size: 2.3rem;
+  color: var(--accent-bold);
 }
 
 .step-title {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  font-size: 1.48rem;
 }
 
 .step-content p {
   max-width: 600px;
 }
 
-/* Expectations */
 .expectations-section {
-  background-color: var(--accent-color);
+  background:
+    linear-gradient(180deg, rgba(221, 205, 194, 0.86), rgba(206, 188, 176, 0.92));
   margin-top: var(--space-xl);
-  padding: 0; /* Let grid handle internal padding for color block */
+  padding: 0;
+  box-shadow: var(--shadow-soft);
 }
 
 .expectations-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 3rem;
   padding: 4rem 2rem;
 }
 
 @media (min-width: 900px) {
   .expectations-grid {
-    grid-template-columns: 1fr 1.5fr;
-    gap: 8rem;
-    padding: 6rem 4rem;
+    grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.45fr);
+    gap: clamp(4rem, 8vw, 8rem);
+    padding: 6rem 4.5rem;
   }
 }
 
 .expectations-header h2 {
   max-width: 300px;
+}
+
+.expectation-item {
+  margin-bottom: 2.6rem;
+}
+
+.expectation-item:last-child {
+  margin-bottom: 0;
+}
+
+.expectation-title {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.22rem;
 }

@@ -1,58 +1,195 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&family=Noto+Serif+Georgian:wght@400;600&family=Noto+Sans+Georgian:wght@300;400;500&display=swap');
+@font-face {
+  font-family: 'AR Archy';
+  src: url('/fonts/ar-archy/ar-archy-thin-13608306126.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AR Archy';
+  src: url('/fonts/ar-archy/ar-archy-extralight-13608306126.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AR Archy';
+  src: url('/fonts/ar-archy/ar-archy-regular-13608306126.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AR Archy';
+  src: url('/fonts/ar-archy/ar-archy-semibold-13608306126.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Turret Road';
+  src: url('/fonts/turret-road/TurretRoad-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Turret Road';
+  src: url('/fonts/turret-road/TurretRoad-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Turret Road';
+  src: url('/fonts/turret-road/TurretRoad-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Turret Road';
+  src: url('/fonts/turret-road/TurretRoad-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Turret Road';
+  src: url('/fonts/turret-road/TurretRoad-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Turret Road';
+  src: url('/fonts/turret-road/TurretRoad-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
-  /* Colors */
-  --bg-primary: #F9F8F6; /* Plaster White */
-  --text-primary: #2D2C2A; /* Gentle Charcoal */
-  --accent-color: #D4CEC4; /* Warm Greige */
-  --border-color: rgba(45, 44, 42, 0.1);
+  --bg-primary: #e8ddd4;
+  --bg-secondary: #ddd0c6;
+  --bg-tertiary: #d2c0b4;
+  --surface-1: rgba(245, 236, 228, 0.7);
+  --surface-2: rgba(230, 216, 206, 0.82);
+  --surface-strong: rgba(218, 200, 188, 0.92);
+  --text-primary: #372c25;
+  --text-secondary: rgba(55, 44, 37, 0.72);
+  --accent-color: #bc8569;
+  --accent-bold: #9d5f46;
+  --accent-soft: #cda392;
+  --accent-haze: rgba(173, 107, 78, 0.18);
+  --border-color: rgba(55, 44, 37, 0.14);
+  --shadow-soft: 0 22px 60px rgba(78, 55, 43, 0.08);
+  --shadow-card: 0 26px 70px rgba(87, 61, 47, 0.12);
 
-  /* Typography: Chains dynamically fallback based on script EN vs KA */
-  --font-serif: 'Playfair Display', 'Noto Serif Georgian', serif;
-  --font-sans: 'Inter', 'Noto Sans Georgian', sans-serif;
-
-  /* Spacing */
+  --font-display: 'AR Archy', 'Noto Sans Georgian', sans-serif;
+  --font-body: 'AR Archy', 'Noto Sans Georgian', sans-serif;
   --space-sm: 1rem;
   --space-md: 2rem;
   --space-lg: 4rem;
   --space-xl: 8rem;
 
-  /* Transitions */
-  --transition-slow: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  --transition-fast: 0.3s ease;
+  --transition-slow: 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-fast: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Global Reset */
+html[lang='en'] {
+  --font-display: 'Turret Road', sans-serif;
+  --font-body: 'Turret Road', sans-serif;
+}
+
+html[lang='ka'] {
+  --font-display: 'AR Archy', 'Noto Sans Georgian', sans-serif;
+  --font-body: 'AR Archy', 'Noto Sans Georgian', sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  min-height: 100%;
+  background: var(--bg-primary);
+}
+
 body {
-  background-color: var(--bg-primary);
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(229, 196, 179, 0.3), transparent 32%),
+    radial-gradient(circle at 85% 16%, rgba(191, 140, 114, 0.12), transparent 30%),
+    linear-gradient(180deg, #ebe1d8 0%, #e4d6cb 48%, #ddd0c5 100%);
   color: var(--text-primary);
-  font-family: var(--font-sans);
-  font-weight: 300;
-  line-height: 1.6;
+  font-family: var(--font-body);
+  font-weight: 200;
+  line-height: 1.8;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif);
-  font-weight: 400;
-  line-height: 1.2;
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.26;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.22), transparent 24%),
+    radial-gradient(circle at 74% 18%, rgba(162, 103, 79, 0.08), transparent 20%),
+    radial-gradient(circle at 48% 62%, rgba(255, 255, 255, 0.12), transparent 26%),
+    radial-gradient(circle at 82% 80%, rgba(168, 113, 88, 0.07), transparent 22%);
+  mix-blend-mode: soft-light;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  transition: opacity var(--transition-fast);
+  transition:
+    opacity var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 a:hover {
-  opacity: 0.7;
+  opacity: 0.88;
 }
 
 img {
@@ -60,7 +197,45 @@ img {
   display: block;
 }
 
-/* Base Layout Classes */
+.site-shell {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-atmosphere {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent 26%),
+    radial-gradient(circle at 12% 12%, rgba(207, 167, 145, 0.14), transparent 24%),
+    radial-gradient(circle at 78% 30%, rgba(156, 108, 84, 0.09), transparent 28%);
+}
+
+.site-main {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  padding-bottom: 4rem;
+}
+
+.cursor-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  background:
+    radial-gradient(480px circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(178, 108, 77, 0.15), transparent 48%),
+    radial-gradient(240px circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(215, 174, 150, 0.12), transparent 52%);
+  mix-blend-mode: multiply;
+}
+
 .container {
   max-width: 1440px;
   margin: 0 auto;
@@ -77,54 +252,69 @@ img {
   }
 }
 
-/* Reusable Typography Classes */
 .heading-large {
-  font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.9rem, 5vw, 4.8rem);
+  font-weight: 600;
+  line-height: 1.08;
+  margin-bottom: 2.5rem;
 }
 
 .heading-medium {
-  font-family: var(--font-serif);
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 400;
-  line-height: 1.2;
+  font-size: clamp(2.15rem, 4vw, 3.15rem);
+  font-weight: 600;
+  line-height: 1.16;
+  margin-bottom: 2rem;
 }
 
 .heading-small {
-  font-family: var(--font-serif);
-  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
   font-weight: 400;
-  line-height: 1.3;
+  line-height: 1.26;
+  margin-bottom: 1rem;
 }
 
 .text-body {
-  font-family: var(--font-sans);
-  font-size: 1.1rem;
-  line-height: 1.6;
-  opacity: 0.8;
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  line-height: 1.78;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  color: var(--text-secondary);
   max-width: 65ch;
 }
 
-/* Core Components */
+.studio-wordmark {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
 .btn-primary {
   display: inline-block;
-  padding: 1rem 2.5rem;
-  background-color: var(--text-primary);
-  color: var(--bg-primary);
-  font-family: var(--font-sans);
-  font-size: 0.85rem;
+  padding: 1.1rem 2.55rem;
+  background: linear-gradient(180deg, #44352d 0%, #382a23 100%);
+  color: #efe4db;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border: 1px solid var(--text-primary);
-  border-radius: 40px;
+  letter-spacing: 0.11em;
+  border: 1px solid rgba(56, 42, 35, 0.9);
+  border-radius: 999px;
   cursor: pointer;
-  transition: background-color var(--transition-fast), color var(--transition-fast);
+  box-shadow: 0 18px 40px rgba(73, 51, 39, 0.15);
+  transition:
+    background-color var(--transition-slow),
+    color var(--transition-slow),
+    border-color var(--transition-slow),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .btn-primary:hover {
-  background-color: transparent;
-  color: var(--text-primary);
+  background: linear-gradient(180deg, #a86b50 0%, #935540 100%);
+  border-color: rgba(147, 85, 64, 0.92);
+  color: #f6ebe3;
+  transform: translateY(-1px);
+  box-shadow: 0 24px 50px rgba(97, 63, 47, 0.18);
 }

@@ -2,12 +2,11 @@
   padding-top: 0;
 }
 
-/* Hero */
 .project-hero {
   width: 100%;
-  height: 70vh;
-  margin-top: -120px; /* Pull up to sit cleanly under the transparent navbar */
-  background-color: var(--accent-color);
+  height: 72vh;
+  margin-top: -120px;
+  background: var(--surface-strong);
 }
 
 @media (min-width: 900px) {
@@ -22,7 +21,6 @@
   object-fit: cover;
 }
 
-/* Header & Meta */
 .project-header {
   display: grid;
   grid-template-columns: 1fr;
@@ -51,19 +49,19 @@
 }
 
 .meta-label {
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  opacity: 0.5;
+  letter-spacing: 0.12em;
+  color: rgba(55, 44, 37, 0.56);
 }
 
 .meta-value {
-  font-family: var(--font-serif);
-  font-size: 1.1rem;
+  font-family: var(--font-display);
+  font-size: 1.08rem;
 }
 
-/* Concept */
 .concept-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -77,7 +75,6 @@
   }
 }
 
-/* Gallery */
 .project-gallery {
   display: grid;
   grid-template-columns: 1fr;
@@ -92,9 +89,10 @@
 }
 
 .gallery-item {
-  aspect-ratio: 3/4;
+  aspect-ratio: 3 / 4;
   overflow: hidden;
-  background-color: var(--accent-color);
+  background: var(--surface-strong);
+  box-shadow: var(--shadow-soft);
 }
 
 .gallery-item img {
@@ -103,7 +101,6 @@
   object-fit: cover;
 }
 
-/* Highlight */
 .project-highlight {
   display: grid;
   grid-template-columns: 1fr;
@@ -119,9 +116,10 @@
 }
 
 .highlight-image {
-  aspect-ratio: 4/5;
-  background-color: var(--accent-color);
+  aspect-ratio: 4 / 5;
+  background: var(--surface-strong);
   overflow: hidden;
+  box-shadow: var(--shadow-card);
 }
 
 .highlight-image img {
@@ -134,12 +132,11 @@
   margin-bottom: 1.5rem;
 }
 
-/* Footer CTA */
 .project-footer {
   border-top: 1px solid var(--border-color);
   text-align: center;
 }
 
 .footer-cta-box {
-  padding: 4rem 0;
+  padding: 4.5rem 0 4rem;
 }

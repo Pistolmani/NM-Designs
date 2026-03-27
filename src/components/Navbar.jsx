@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink, Link, useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
-  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -15,33 +14,44 @@ const Navbar = () => {
     i18n.changeLanguage(newLang);
   };
 
+  const closeMobileMenu = () => {
+    setIsOpen(false);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
+
     window.addEventListener('scroll', handleScroll);
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  // Close mobile menu on route change
-  useEffect(() => {
-    setIsOpen(false);
-  }, [location.pathname]);
 
   return (
     <header className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          NM Designs
+          <span className="navbar-logo-mark">
+            <img src="/logo.jpg" alt="" className="navbar-logo-image" />
+          </span>
+          <span className="navbar-logo-text">NM Designs</span>
         </Link>
-        
-        {/* Desktop Nav */}
+
         <nav className="navbar-desktop">
-          <NavLink to="/" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>{t('nav.home')}</NavLink>
-          <NavLink to="/projects" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>{t('nav.projects')}</NavLink>
-          <NavLink to="/studio" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>{t('nav.studio')}</NavLink>
-          <NavLink to="/contact" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>{t('nav.contact')}</NavLink>
-          
+          <NavLink to="/" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+            {t('nav.home')}
+          </NavLink>
+          <NavLink to="/projects" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+            {t('nav.projects')}
+          </NavLink>
+          <NavLink to="/studio" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+            {t('nav.studio')}
+          </NavLink>
+          <NavLink to="/contact" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+            {t('nav.contact')}
+          </NavLink>
+
           <div className="navbar-lang-toggle">
             <button onClick={toggleLanguage} className="lang-btn">
               {i18n.language === 'en' ? 'KA' : 'EN'}
@@ -49,24 +59,34 @@ const Navbar = () => {
           </div>
         </nav>
 
-        {/* Mobile menu toggle */}
-        <button className="navbar-mobile-toggle" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
+        <button
+          className="navbar-mobile-toggle"
+          onClick={() => setIsOpen((open) => !open)}
+          aria-label="Toggle menu"
+        >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Nav Overlay */}
       {isOpen && (
         <div className="navbar-mobile-menu">
-           <nav className="mobile-nav-links">
-              <Link to="/">{t('nav.home')}</Link>
-              <Link to="/projects">{t('nav.projects')}</Link>
-              <Link to="/studio">{t('nav.studio')}</Link>
-              <Link to="/contact">{t('nav.contact')}</Link>
-              <button onClick={toggleLanguage} className="mobile-lang-btn">
-                {i18n.language === 'en' ? 'ქართული' : 'English'}
-              </button>
-           </nav>
+          <nav className="mobile-nav-links">
+            <Link to="/" onClick={closeMobileMenu}>
+              {t('nav.home')}
+            </Link>
+            <Link to="/projects" onClick={closeMobileMenu}>
+              {t('nav.projects')}
+            </Link>
+            <Link to="/studio" onClick={closeMobileMenu}>
+              {t('nav.studio')}
+            </Link>
+            <Link to="/contact" onClick={closeMobileMenu}>
+              {t('nav.contact')}
+            </Link>
+            <button onClick={toggleLanguage} className="mobile-lang-btn">
+              {i18n.language === 'en' ? t('nav.lang.switch') : 'English'}
+            </button>
+          </nav>
         </div>
       )}
     </header>
