@@ -132,6 +132,69 @@
   margin-bottom: 1.5rem;
 }
 
+.project-rooms {
+  margin-bottom: var(--space-xl);
+}
+
+.room-section {
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--border-color);
+  margin-top: var(--space-xl);
+}
+
+.room-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(55, 44, 37, 0.56);
+  margin-bottom: 1.5rem;
+}
+
+.room-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.room-grid-item {
+  overflow: hidden;
+  background: var(--surface-strong);
+}
+
+.room-grid-item--full {
+  grid-column: 1 / -1;
+}
+
+.room-grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.room-grid-item--plan img {
+  object-fit: contain;
+  background: #fafaf8;
+}
+
+.room-grid-item:hover img {
+  transform: scale(1.025);
+}
+
+@media (max-width: 600px) {
+  .room-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .room-grid-item--full {
+    grid-column: 1;
+  }
+}
+
 .project-footer {
   border-top: 1px solid var(--border-color);
   text-align: center;
