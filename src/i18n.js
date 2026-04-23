@@ -71,14 +71,12 @@ const resources = {
       "projects.view": "View Project",
 
       // Portfolio - Project Data
-      "proj.1.type": "Residential Concept",
-      "proj.1.desc": "A serene approach to inner-city living, blending warm woods with bespoke plaster.",
-      "proj.2.type": "Full Renovation",
-      "proj.2.desc": "Restoring historical character while introducing minimalist, contemporary utility.",
+      "proj.1.type": "Full Interior Architecture",
+      "proj.1.desc": "A mountain retreat designed around warmth and refuge — oak joinery, travertine surfaces, and a bespoke fireplace wall.",
+      "proj.2.type": "Residential Concept",
+      "proj.2.desc": "A penthouse conceived around panoramic city views, Venetian plaster, and restrained warm-toned luxury.",
       "proj.3.type": "Space Planning & Styling",
-      "proj.3.desc": "Maximizing space in a compact footprint through custom integrated joinery.",
-      "proj.4.type": "Architecture & Interiors",
-      "proj.4.desc": "Merging raw concrete and warm textiles seamlessly into the natural landscape.",
+      "proj.3.desc": "Maximizing space in a compact footprint through custom integrated joinery and a continuous warm palette.",
 
       // Project Detail
       "detail.meta.location": "Location",
@@ -88,14 +86,10 @@ const resources = {
       "detail.concept.title": "The Concept",
       "detail.cta.title": "Like what you see?",
       "detail.cta.button": "Inquire About Your Project",
-      "detail.project.title": "Vake Residence",
-      "detail.project.type": "Interior Concept",
-      "detail.project.location": "Tbilisi, Georgia",
-      "detail.project.scope": "Full Interior Architecture",
-      "detail.project.status": "Concept / Visualization",
-      "detail.project.conceptText": "For this Vake apartment, the brief requested a sanctuary away from the dense urban environment. We utilized a continuous palette of Roman clay, smoked oak, and unlacquered brass to create a space that feels instantly grounding. The lack of harsh overhead lighting emphasizes the architectural shadows, making the environment dynamic throughout the day.",
-      "detail.project.highlightTitle": "The Custom Joinery",
-      "detail.project.highlightText": "A defining feature of the residence is the 12-meter continuous oak joinery wall that houses everything from the kitchen appliances to the hidden media center, completely removing visual clutter from the main living area.",
+      "detail.room.living": "Living Room",
+      "detail.room.kitchen": "Kitchen & Dining",
+      "detail.room.bathroom": "Bathroom",
+      "detail.room.plan": "Floor Plan",
 
       // Studio
       "studio.title": "The Studio",
@@ -248,14 +242,12 @@ const resources = {
       "projects.view": "პროექტის ნახვა",
 
       // Portfolio - Project Data
-      "proj.1.type": "საცხოვრებელი კონცეფცია",
-      "proj.1.desc": "მშვიდობიანი მიდგომა შიდა-ქალაქურ ცხოვრებასთან, თბილი ხის და ინდივიდუალური ტინის შერწყმით.",
-      "proj.2.type": "სრული რენოვაცია",
-      "proj.2.desc": "ისტორიული ხასიათის აღდგენა თანამედროვე მინიმალისტური ფუნქციონალურობის დანერგვისას.",
+      "proj.1.type": "სრული ინტერიერის არქიტექტურა",
+      "proj.1.desc": "მთის თავშესაფარი, რომელიც სიტბოს და სიმყუდროვის გარშემოა ჩამოყალიბებული — მუხის ავეჯი, ტრავერტინი და ბუხრის ინდივიდუალური კედელი.",
+      "proj.2.type": "საცხოვრებელი კონცეფცია",
+      "proj.2.desc": "პენტჰაუსი, რომელიც ქალაქის პანორამულ ხედებზე, ვენეციური ტინზე და თბილ ლუქსზეა ორიენტირებული.",
       "proj.3.type": "სივრცის დაგეგმარება",
-      "proj.3.desc": "სივრცის მაქსიმალიზაცია კომპაქტურ ფართობში ინტეგრირებული ავეჯის მეშვეობით.",
-      "proj.4.type": "არქიტექტურა და ინტერიერი",
-      "proj.4.desc": "ნედლი ბეტონის და თბილი ტექსტილის ჰარმონიული შერწყმა ბუნებრივ ლანდშაფტში.",
+      "proj.3.desc": "სივრცის მაქსიმალიზაცია კომპაქტურ ფართობში ინტეგრირებული ავეჯის მეშვეობით და უწყვეტი თბილი პალიტრით.",
 
       // Project Detail
       "detail.meta.location": "ადგილმდებარეობა",
@@ -265,14 +257,10 @@ const resources = {
       "detail.concept.title": "კონცეფცია",
       "detail.cta.title": "მოგწონთ რასაც ხედავთ?",
       "detail.cta.button": "მოითხოვეთ შეთავაზება",
-      "detail.project.title": "ვაკის რეზიდენცია",
-      "detail.project.type": "ინტერიერის კონცეფცია",
-      "detail.project.location": "თბილისი, საქართველო",
-      "detail.project.scope": "სრული ინტერიერის არქიტექტურა",
-      "detail.project.status": "კონცეფცია / ვიზუალიზაცია",
-      "detail.project.conceptText": "ვაკის ამ ბინისთვის დავალება ითხოვდა მჭიდრო ურბანული გარემოდან მოწყვეტილ, დამამშვიდებელ თავშესაფარს. გამოვიყენეთ რომაული თიხის, შებოლილი მუხის და უმუშავებელი სპილენძის უწყვეტი პალიტრა, რათა სივრცე მყისიერად დამიწებული და მშვიდი შეგრძნების მქონე ყოფილიყო. მკვეთრი ზედა განათების არარსებობა ხაზს უსვამს არქიტექტურულ ჩრდილებს და გარემოს დღის განმავლობაში ცვალებად ხასიათს აძლევს.",
-      "detail.project.highlightTitle": "ინდივიდუალური ჩაშენება",
-      "detail.project.highlightText": "რეზიდენციის განმსაზღვრელი ელემენტია 12-მეტრიანი უწყვეტი მუხის ჩაშენებული კედელი, რომელიც აერთიანებს სამზარეულოს ტექნიკას, მედია ზონას და საცავს, რათა მთავარი საცხოვრებელი სივრცე მთლიანად ვიზუალური ხმაურისგან გათავისუფლდეს.",
+      "detail.room.living": "საცხოვრებელი ოთახი",
+      "detail.room.kitchen": "სამზარეულო და სასადილო",
+      "detail.room.bathroom": "სააბაზანო ოთახი",
+      "detail.room.plan": "სართულის გეგმა",
 
       // Studio
       "studio.title": "სტუდია",
