@@ -84,3 +84,6 @@ build/Release
 # Vite timestamp files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Claude Code worktrees
+.claude/worktrees/
