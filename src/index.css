@@ -114,6 +114,14 @@ html[lang='en'] {
 html[lang='ka'] {
   --font-display: 'AR Archy', 'Noto Sans Georgian', sans-serif;
   --font-body: 'AR Archy', 'Noto Sans Georgian', sans-serif;
+
+  /* Georgian-specific typographic tokens */
+  --ka-heading-letter-spacing: 0.02em;
+  --ka-body-letter-spacing: 0.015em;
+  --ka-body-word-spacing: 0.06em;
+  --ka-body-line-height: 1.95;
+  --ka-heading-line-height: 1.24;
+  --ka-heading-weight: 400;
 }
 
 * {
@@ -172,6 +180,18 @@ h6 {
   line-height: 1.18;
   letter-spacing: -0.03em;
   margin-bottom: 0.75rem;
+}
+
+/* Georgian heading refinements */
+html[lang='ka'] h1,
+html[lang='ka'] h2,
+html[lang='ka'] h3,
+html[lang='ka'] h4,
+html[lang='ka'] h5,
+html[lang='ka'] h6 {
+  letter-spacing: var(--ka-heading-letter-spacing);
+  line-height: var(--ka-heading-line-height);
+  font-weight: var(--ka-heading-weight);
 }
 
 p {
@@ -243,12 +263,14 @@ img {
 }
 
 .section {
-  padding: var(--space-lg) 0;
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
 }
 
 @media (min-width: 768px) {
   .section {
-    padding: var(--space-xl) 0;
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
   }
 }
 
@@ -281,6 +303,38 @@ img {
   letter-spacing: 0.005em;
   color: var(--text-secondary);
   max-width: 65ch;
+}
+
+/* Georgian body text refinements */
+html[lang='ka'] .text-body,
+html[lang='ka'] p {
+  letter-spacing: var(--ka-body-letter-spacing);
+  word-spacing: var(--ka-body-word-spacing);
+  line-height: var(--ka-body-line-height);
+}
+
+html[lang='ka'] .text-body {
+  max-width: 55ch;
+}
+
+html[lang='ka'] .heading-large {
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
+  line-height: 1.22;
+  font-weight: 400;
+  letter-spacing: 0.015em;
+}
+
+html[lang='ka'] .heading-medium {
+  font-size: clamp(1.85rem, 3.5vw, 2.7rem);
+  line-height: 1.26;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+html[lang='ka'] .heading-small {
+  font-size: clamp(1.2rem, 1.8vw, 1.65rem);
+  line-height: 1.36;
+  letter-spacing: 0.02em;
 }
 
 .studio-wordmark {

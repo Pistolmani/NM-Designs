@@ -23,10 +23,19 @@
   margin-top: 0.35rem;
 }
 
+html[lang='ka'] .hero-title {
+  max-width: 14ch;
+}
+
 .hero-subtitle {
   margin: 1.1rem 0 2.8rem;
   font-size: 1.13rem;
   max-width: 50ch;
+}
+
+html[lang='ka'] .hero-subtitle {
+  max-width: 42ch;
+  font-size: 1.05rem;
 }
 
 .link-arrow {
@@ -123,13 +132,15 @@
   background:
     linear-gradient(180deg, rgba(225, 207, 196, 0.66), rgba(212, 193, 181, 0.82)),
     radial-gradient(circle at top left, rgba(193, 143, 119, 0.14), transparent 32%);
-  padding: var(--space-lg) 0;
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
   box-shadow: var(--shadow-soft);
 }
 
 @media (min-width: 768px) {
   .studio-preview {
-    padding: var(--space-xl) 0;
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
   }
 }
 
@@ -187,6 +198,11 @@
   margin-bottom: 2.6rem;
 }
 
+html[lang='ka'] .studio-lead-text {
+  font-size: clamp(1.08rem, 1.4vw, 1.2rem);
+  line-height: 1.92;
+}
+
 .services-list {
   display: flex;
   flex-direction: column;
@@ -216,6 +232,12 @@
 .service-name {
   font-size: 1.52rem;
   margin-bottom: 0;
+}
+
+html[lang='ka'] .service-name {
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+  font-weight: 400;
 }
 
 .process-section-title {

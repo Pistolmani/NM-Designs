@@ -87,6 +87,11 @@
   color: rgba(55, 44, 37, 0.62);
 }
 
+html[lang='ka'] .nav-link {
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+}
+
 .nav-link:hover,
 .nav-link.active {
   color: var(--text-primary);

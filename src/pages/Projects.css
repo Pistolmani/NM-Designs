@@ -12,6 +12,11 @@
   font-size: 1.14rem;
 }
 
+html[lang='ka'] .portfolio-intro {
+  max-width: 52ch;
+  line-height: 1.92;
+}
+
 .portfolio-list {
   display: flex;
   flex-direction: column;

@@ -64,6 +64,10 @@
   margin-bottom: 2rem;
 }
 
+html[lang='ka'] .footer-column h4 {
+  letter-spacing: 0.08em;
+}
+
 .footer-column a {
   display: block;
   margin-bottom: 1.25rem;
